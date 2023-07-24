@@ -1,7 +1,6 @@
 var slideshowButton = document.getElementById("prevButton");
 var slideshowButton = document.getElementById("nextButton");
 
-// Show the slideshow controls
 function showSlideshowHeader() {
   var slideshowHeader = document.querySelector(".slideshow-header");
   slideshowHeader.style.visibility = "visible";
@@ -12,7 +11,6 @@ function showSlideshowControls() {
   controls.style.visibility = "visible";
 }
 
-// Function to show the second set of buttons (button-container-2)
 function showButtonContainer2() {
   var buttonContainer2 = document.querySelector(".button-container-2");
   var buttonContainer2Header = document.querySelector(
@@ -22,42 +20,34 @@ function showButtonContainer2() {
   buttonContainer2Header.style.display = "flex";
 }
 
-// Get the button elements
 var csvButton = document.getElementById("csvButton");
 var prevButton = document.getElementById("prevButton");
 var nextButton = document.getElementById("nextButton");
 
-// Add event listener to the CSV button
 csvButton.addEventListener("click", function () {
-  csvButton.classList.toggle("clicked"); // Toggle the "clicked" class
+  csvButton.classList.toggle("clicked"); 
 });
 
 var prevButton = document.getElementById("prevButton");
 var nextButton = document.getElementById("nextButton");
 
-// Add event listener to the next button
 nextButton.addEventListener("click", function () {
-  nextButton.classList.toggle("clicked"); // Toggle the "clicked" class for the next button
-  prevButton.classList.remove("clicked"); // Remove the "clicked" class from the previous button
+  nextButton.classList.toggle("clicked"); 
+  prevButton.classList.remove("clicked"); 
 });
 
-// Add event listener to the previous button
 prevButton.addEventListener("click", function () {
-  prevButton.classList.toggle("clicked"); // Toggle the "clicked" class for the previous button
-  nextButton.classList.remove("clicked"); // Remove the "clicked" class from the next button
+  prevButton.classList.toggle("clicked"); 
+  nextButton.classList.remove("clicked"); 
 });
 
-// Function to calculate using the provided column names
 function calculate(columnNames) {
-  // Populate the column select dropdown
   console.log("here")
   populateColumnSelect(columnNames);
 
-  // Event listener for the column select
   document.getElementById("columnSelect").addEventListener("change", function () {
     var columnName = this.value;
 
-    // Perform calculations
     calculateMode(columnName);
     calculateRange(columnName);
     calculateVariance(columnName);

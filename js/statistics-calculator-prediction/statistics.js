@@ -277,6 +277,8 @@ function callANOVA() {
 
       var resultDiv = document.getElementById("anovaResult");
       resultDiv.innerHTML = anovaResult;
+      logUserAction(sampleUserID, currentCSV, "ANOVA", selectedColumns, anovaResult);
+
     });
 
   document
@@ -323,6 +325,8 @@ function callTtest() {
 
       var resultDiv = document.getElementById("tTestResult");
       resultDiv.innerHTML = tTestResult;
+      logUserAction(sampleUserID, currentCSV, "T-Test", selectedColumns, tTestResult);
+
     });
 
   document
@@ -373,6 +377,9 @@ function callPearson() {
 
       var resultDiv = document.getElementById("pearsonResult");
       resultDiv.innerHTML = pearsonResult;
+
+      logUserAction(sampleUserID, currentCSV, "Pearson Correlation", selectedColumns, pearsonResult);
+
     });
 
   document
@@ -422,6 +429,10 @@ function callSpearman() {
 
       var resultDiv = document.getElementById("spearmanResult");
       resultDiv.innerHTML = spearmanResult;
+
+
+      logUserAction(sampleUserID, currentCSV, "Spearman Rho", selectedColumns, spearmanResult);
+
     });
 
   document
@@ -457,6 +468,8 @@ function callChi() {
 
       var resultDiv = document.getElementById("chiResult");
       resultDiv.innerHTML = chiResult;
+      logUserAction(sampleUserID, currentCSV, "Chi Square", selectedColumns, chiResult);
+
     });
 
   document

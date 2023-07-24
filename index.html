@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="css/popCSV.css" />
     <link rel="stylesheet" href="css/popManual.css" />
     <link rel="stylesheet" href="css/statistics.css" />
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -258,7 +257,7 @@
     <div id="meanModal" class="modal">
       <div class="modal-content">
         <span class="close" id="closeMeanButton">&times;</span>
-        <h2>Select Column/s for Mean</h2>
+        <h2>Select a Column for Mean</h2>
         <form id="meanForm">
           <!-- where the mean column will go -->
         </form>
@@ -271,7 +270,7 @@
     <div id="medianModal" class="modal">
       <div class="modal-content">
         <span class="close" id="closeMedianButton">&times;</span>
-        <h2>Select Column/s for Median</h2>
+        <h2>Select Column for Median</h2>
         <form id="medianForm">
           <!-- where the median column will go -->
         </form>
@@ -284,7 +283,7 @@
     <div id="modeModal" class="modal">
       <div class="modal-content">
         <span class="close" id="closeModeButton">&times;</span>
-        <h2>Select Column/s for Mode</h2>
+        <h2>Select Column for Mode</h2>
         <form id="modeForm">
           <!-- where the mode column will go -->
         </form>
@@ -297,7 +296,7 @@
     <div id="rangeModal" class="modal">
       <div class="modal-content">
         <span class="close" id="closeRangeButton">&times;</span>
-        <h2>Select Column/s for Range</h2>
+        <h2>Select Column for Range</h2>
         <form id="rangeForm">
           <!-- where the range column will go -->
         </form>
@@ -310,7 +309,7 @@
     <div id="varianceModal" class="modal">
       <div class="modal-content">
         <span class="close" id="closeVarianceButton">&times;</span>
-        <h2>Select Column/s for Variance</h2>
+        <h2>Select Column for Variance</h2>
         <form id="varianceForm">
           <!-- where the variance column will go -->
         </form>
@@ -326,7 +325,7 @@
     <div id="minimumModal" class="modal">
       <div class="modal-content">
         <span class="close" id="closeMinimumButton">&times;</span>
-        <h2>Select Column/s for Minimum</h2>
+        <h2>Select Column for Minimum</h2>
         <form id="minimumForm">
           <!-- where the minimum column will go -->
         </form>
@@ -339,7 +338,7 @@
     <div id="maximumModal" class="modal">
       <div class="modal-content">
         <span class="close" id="closeMaximumButton">&times;</span>
-        <h2>Select Column/s for Maximum</h2>
+        <h2>Select Column for Maximum</h2>
         <form id="maximumForm">
           <!-- where the maximum column will go -->
         </form>
@@ -352,7 +351,7 @@
     <div id="standardDeviationModal" class="modal">
       <div class="modal-content">
         <span class="close" id="closeStandardDeviationButton">&times;</span>
-        <h2>Select Column/s for Standard Deviation</h2>
+        <h2>Select Column for Standard Deviation</h2>
         <form id="standardDeviationForm">
           <!-- where the standard deviation column will go -->
         </form>
@@ -372,11 +371,65 @@
         <div id="countOfValuesResult"></div>
       </div>
     </div>
-    
+  
+
+    <div id="linearModal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="closeLinearRegressionButton">&times;</span>
+        <h2>Select two Columns for Linear Regression</h2>
+        <form id="linarRegressionForm">
+        </form>
+        <button id="processLinearRegressionButton">Continue</button>
+        <div id="linearRegressionResult"></div>
+        <canvas id="linearRegressionResultChart" width="10" height="10"></canvas>
+      </div>
+    </div>
 
 
+    <div id="randomForestModal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="closeRandomForestButton">&times;</span>
+        <h2>Select two Columns for Random Forest Regression.</h2>
+        <label for="treeValue">Enter Tree value:</label>
+          <input type="number" id="treeValueNumber" name="treeValueNumber" min="1" step="1" required>
+        <form id="randomForestForm">
+          
+        </form>
+        <button id="processRandomForestButton">Continue</button>
+        <div id="randomForestResult"></div>
+        <canvas id="randomForestResultChart" width="10" height="10"></canvas>
+      </div>
+    </div>
 
 
+    <div id="knnModal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="closeKNNButton">&times;</span>
+        <h2>Select Columns for KNN. <br> First column is predicted.</h2>
+        <form id="knnForm">
+          <!-- Input field for K value -->
+          <label for="kValue">Enter K value:</label>
+          <input type="number" id="kValueNumber" name="kValue" min="1" step="1" required>
+        </form>
+        <button id="processKNNButton">Continue</button>
+        <div id="knnResult"></div>
+        <canvas id="knnResultChart" width="10" height="10"></canvas>
+      </div>
+    </div>
+
+
+    <div id="timeSeriesModal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="closeTimeSeriesButton">&times;</span>
+        <h2>Select two Columns for Time Series. <br> First column clicked should be  Date.</h2>
+        <form id="timeSeriesForm">
+          <!-- Input field for K value -->
+        </form>
+        <button id="processTimeSeriesButton">Continue</button>
+        <div id="timeSeriesResult"></div>
+        <canvas id="timeSeriesResultChart" width="10" height="10"></canvas>
+      </div>
+    </div>
 
 
 
@@ -389,9 +442,10 @@
 
 
     <footer class="footer-container"></footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/simple-statistics@6.1.0/dist/simple-statistics.min.js"></script>
-    <script src="modules/statistics.js" type="text/javascript"></script>
 
     <script
       type="module"
@@ -399,6 +453,8 @@
     ></script>
 
     <!-- import all data first, then graph. JS is sequential -->
+    <script src="js/statistics-calculator-prediction/dataGetter.js"></script>
+
     <script src="js/nav.js" async defer></script>
     <script src="js/footer.js" async defer></script>
 
@@ -407,6 +463,12 @@
     <script src="js/3buttons.js" async defer></script>
     <script src="js/statistics-calculator-prediction/statistics.js"></script>
     <script src="js/statistics-calculator-prediction/calculator.js"></script>
+    <script src="js/statistics-calculator-prediction/linear.js"></script>
+    <script src="js/statistics-calculator-prediction/randomForest.js"></script>
+    <script src="js/statistics-calculator-prediction/knn.js"></script>
+    <script src="js/statistics-calculator-prediction/timeseries.js"></script>
+
+
 
     <!-- need to identify the functions first before data -->
     <script src="js/popCSV.js" async defer></script>

@@ -3,12 +3,10 @@ var statisticsModal = document.getElementById("statisticsModal");
 var predictionModal = document.getElementById("predictionModal");
 var calculatorModal = document.getElementById("calculatorModal");
 
-// Get the buttons that open the modals
 var statisticsButton = document.getElementById("statisticsButton");
 var predictionButton = document.getElementById("predictionButton");
 var calculatorButton = document.getElementById("calculatorButton");
 
-// Open the respective modal when the buttons are clicked
 statisticsButton.addEventListener("click", function (event) {
   event.preventDefault();
   statisticsModal.style.display = "block";
@@ -33,7 +31,6 @@ calculatorButton.addEventListener("click", function (event) {
   predictionButton.classList.remove("clicked");
 });
 
-// Close the modals when the close button is clicked
 var closeBtns = document.getElementsByClassName("close");
 for (var i = 0; i < closeBtns.length; i++) {
   closeBtns[i].addEventListener("click", function () {
@@ -46,7 +43,6 @@ for (var i = 0; i < closeBtns.length; i++) {
   });
 }
 
-// Close the modals when the user clicks outside of them
 window.addEventListener("click", function (event) {
   if (
     event.target == statisticsModal ||

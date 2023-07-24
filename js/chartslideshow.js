@@ -1,12 +1,18 @@
-
-// Global variables
-var charts = [];
-var currentChartIndex = 1;
-
 function createChart(jsonData, column) {
   var chartData = jsonData.map(function (data) {
     return data[column];
   });
+
+  // Check if the data is of date type
+  if (chartData.some((data) => data instanceof Date)) {
+    console.log("Skipping date column:", column);
+  }
+
+  // Check if the data contains any invalid or NaN values
+  if (chartData.some((data) => isNaN(data))) {
+    console.log("Skipping problematic column:", column);
+    return;
+  }
 
   var valueCounts = {};
   for (var i = 0; i < chartData.length; i++) {
@@ -25,7 +31,7 @@ function createChart(jsonData, column) {
   var slideshow = document.getElementById("slideshow");
   slideshow.appendChild(chartContainer);
 
-  var chartTypes = ["bar", "doughnut", "polarArea"]; 
+  var chartTypes = ["line","bar", "scatter", "polarArea"];
   var chartTypeIndex = charts.length % chartTypes.length;
   var chartType = chartTypes[chartTypeIndex];
 
@@ -61,10 +67,10 @@ function createChart(jsonData, column) {
       },
       plugins: {
         legend: {
-          display: false, 
-        title: {
-          display: true,
-          text: column + " Column Values", 
+          display: false,
+          title: {
+            display: true,
+            text: column + " Column Values",
             size: 16,
             weight: "bold",
           },
@@ -88,6 +94,7 @@ function createChart(jsonData, column) {
 
   charts.push(chart);
 }
+
 
 function updateSlideshow() {
   var currentChart = charts[currentChartIndex];

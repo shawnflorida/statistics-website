@@ -1,12 +1,9 @@
-// Global variables
 var charts = [];
-// Global variable to store the CSV data from popCSV.js
 var currentCSV = [];
 
-var currentChartIndex = 1;
-var columnNamesArray = []; // Global array to store column names
+var currentChartIndex = 2;
+var columnNamesArray = [];
 
-// Event listener for the CSV button
 document.getElementById("csvButton").addEventListener("click", function (e) {
   e.preventDefault();
   var fileInput = document.createElement("input");
@@ -15,6 +12,12 @@ document.getElementById("csvButton").addEventListener("click", function (e) {
   fileInput.addEventListener("change", handleFileSelect);
   fileInput.click();
 });
+function handleFileSelect(e) {
+  var selectedFile = e.target.files[0]; // Get the selected file from the file input
+  csvName = selectedFile.name; // Get the name of the selected CSV file
+  console.log("Selected CSV file name:", csvName);
+  // Now you can use the csvName variable to store the CSV file name or perform any other actions with it.
+}
 
 document
   .getElementById("csvButton")
@@ -30,13 +33,15 @@ function handleFileSelect(event) {
       renderCSVData(csvData);
     };
     reader.readAsText(file);
+    csvName = file.name; // Get the name of the selected CSV file
+    console.log("Selected CSV file name:", csvName);
   }
 }
 
 function renderCSVData(csvData) {
   var lines = csvData.split("\n");
-  var jsonData = []; /
-  var columnNames = lines[0].split(","); 
+  var jsonData = [];
+  var columnNames = lines[0].split(",");
 
   for (var i = 1; i < lines.length; i++) {
     var columns = lines[i].split(",");
@@ -46,15 +51,20 @@ function renderCSVData(csvData) {
 
     for (var j = 0; j < columns.length; j++) {
       var trimmedValue = columns[j].trim();
-      if (
-        trimmedValue === "undefined" ||
-        isNaN(trimmedValue) ||
-        trimmedValue === ""
-      ) {
+      if (trimmedValue === "undefined" || trimmedValue === "") {
         isValidRow = false;
         break;
       }
-      rowData[columnNames[j]] = trimmedValue;
+
+      // Check if the value matches a date pattern (e.g., "YYYY-MM-DD HH:mm:ss")
+      if (isValidDate(trimmedValue)) {
+        // If it's a valid date, store it as a Date object
+        var dateValue = new Date(trimmedValue);
+        rowData[columnNames[j]] = dateValue;
+      } else {
+        // Otherwise, store it as a string or other data type
+        rowData[columnNames[j]] = trimmedValue;
+      }
     }
 
     if (isValidRow) {
@@ -63,8 +73,8 @@ function renderCSVData(csvData) {
   }
 
   currentCSV = jsonData;
-
   columnNamesArray = columnNames;
+  console.log(currentCSV);
   console.log(columnNamesArray);
 
   for (var column in columnNames) {
@@ -81,4 +91,17 @@ function renderCSVData(csvData) {
   setInterval(updateSlideshow, 7000);
   initializeStatisticsModal();
   initializeCalculatorModal();
+  initializePredictionModal();
+}
+
+// Function to check if a value matches a date pattern
+function isValidDate(value) {
+  var dateRegex = /^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}$/;
+  return dateRegex.test(value);
+}
+function clearSlideshow() {
+  var slideshow = document.getElementById("slideshow");
+  while (slideshow.firstChild) {
+    slideshow.removeChild(slideshow.firstChild);
+  }
 }

@@ -24,7 +24,6 @@ function computeMean(...selectedColumns) {
     return means;
 }
 
-// Compute Median
 function computeMedian(...selectedColumns) {
     if (selectedColumns.length === 0 || selectedColumns.length > 1) {
         throw new Error("Please select exactly one column for median computation.");
@@ -56,7 +55,6 @@ function computeMedian(...selectedColumns) {
     return medians;
 }
 
-// Compute Mode
 function computeMode(...selectedColumns) {
     if (selectedColumns.length === 0 || selectedColumns.length > 1) {
         throw new Error("Please select exactly one column for mode computation.");
@@ -94,7 +92,6 @@ function computeMode(...selectedColumns) {
     return modes;
 }
 
-// Compute Range
 function computeRange(...selectedColumns) {
     if (selectedColumns.length === 0 || selectedColumns.length > 1) {
         throw new Error("Please select exactly one column for range computation.");
@@ -119,7 +116,6 @@ function computeRange(...selectedColumns) {
     return ranges;
 }
 
-// Compute Variance
 function computeVariance(...selectedColumns) {
     if (selectedColumns.length === 0 || selectedColumns.length > 1) {
         throw new Error(
@@ -158,7 +154,6 @@ function computeVariance(...selectedColumns) {
     return variances;
 }
 
-// Compute Minimum
 function computeMinimum(...selectedColumns) {
     if (selectedColumns.length === 0 || selectedColumns.length > 1) {
         throw new Error(
@@ -183,7 +178,6 @@ function computeMinimum(...selectedColumns) {
     return minimums;
 }
 
-// Compute Maximum
 function computeMaximum(...selectedColumns) {
     if (selectedColumns.length === 0 || selectedColumns.length > 1) {
         throw new Error(
@@ -208,7 +202,6 @@ function computeMaximum(...selectedColumns) {
     return maximums;
 }
 
-// Compute Standard Deviation
 function computeStandardDeviation(...selectedColumns) {
     if (selectedColumns.length === 0 || selectedColumns.length > 1) {
         throw new Error(
@@ -248,7 +241,6 @@ function computeStandardDeviation(...selectedColumns) {
     return standardDeviations;
 }
 
-// Compute Count of Values
 function computeCountOfValues(...selectedColumns) {
     if (selectedColumns.length === 0) {
         throw new Error("Please select at least one column for count computation.");
@@ -301,12 +293,13 @@ function callMean() {
 
             var resultDiv = document.getElementById("meanResult");
             resultDiv.innerHTML = "";
-
-            // Display the mean for the selected column
             var column = selectedColumns[0];
             var meanResult = meanResults[column];
             var resultText = "Mean for " + column + ": " + meanResult + "<br>";
             resultDiv.innerHTML += resultText;
+
+            logUserAction(sampleUserID, currentCSV, "Mean", selectedColumns, resultText);
+
         });
 
     document
@@ -317,7 +310,6 @@ function callMean() {
         });
 }
 
-// Call Median
 function callMedian() {
     document
         .getElementById("medianButton")
@@ -353,11 +345,12 @@ function callMedian() {
             var resultDiv = document.getElementById("medianResult");
             resultDiv.innerHTML = "";
 
-            // Display the median for the selected column
             var column = selectedColumns[0];
             var medianResult = medianResults[column];
             var resultText = "Median for " + column + ": " + medianResult + "<br>";
             resultDiv.innerHTML += resultText;
+            logUserAction(sampleUserID, currentCSV, "Mean", selectedColumns, resultText);
+
         });
 
     document
@@ -368,7 +361,6 @@ function callMedian() {
         });
 }
 
-// Call Mode
 function callMode() {
     document.getElementById("modeButton").addEventListener("click", function () {
         var modal = document.getElementById("modeModal");
@@ -402,11 +394,12 @@ function callMode() {
             var resultDiv = document.getElementById("modeResult");
             resultDiv.innerHTML = "";
 
-            // Display the mode for the selected column
             var column = selectedColumns[0];
             var modeResult = modeResults[column];
             var resultText = "Mode for " + column + ": " + modeResult + "<br>";
             resultDiv.innerHTML += resultText;
+            logUserAction(sampleUserID, currentCSV, "Mode", selectedColumns, resultText);
+
         });
 
     document
@@ -415,9 +408,9 @@ function callMode() {
             var modal = document.getElementById("modeModal");
             modal.style.display = "none";
         });
+
 }
 
-// Call Range
 function callRange() {
     document.getElementById("rangeButton").addEventListener("click", function () {
         var modal = document.getElementById("rangeModal");
@@ -451,11 +444,12 @@ function callRange() {
             var resultDiv = document.getElementById("rangeResult");
             resultDiv.innerHTML = "";
 
-            // Display the range for the selected column
             var column = selectedColumns[0];
             var rangeResult = rangeResults[column];
             var resultText = "Range for " + column + ": " + rangeResult + "<br>";
             resultDiv.innerHTML += resultText;
+            logUserAction(sampleUserID, currentCSV, "Range", selectedColumns, resultText);
+
         });
 
     document
@@ -466,7 +460,6 @@ function callRange() {
         });
 }
 
-// Call Variance
 function callVariance() {
     document
         .getElementById("varianceButton")
@@ -508,12 +501,13 @@ function callVariance() {
             var resultDiv = document.getElementById("varianceResult");
             resultDiv.innerHTML = "";
 
-            // Display the variance for the selected column
             var column = selectedColumns[0];
             var varianceResult = varianceResults[column];
             var resultText =
                 "Variance for " + column + ": " + varianceResult + "<br>";
             resultDiv.innerHTML += resultText;
+            logUserAction(sampleUserID, currentCSV, "Variance", selectedColumns, resultText);
+
         });
 
     document
@@ -524,7 +518,6 @@ function callVariance() {
         });
 }
 
-// Call Minimum
 function callMinimum() {
     document
         .getElementById("minimumButton")
@@ -555,13 +548,15 @@ function callMinimum() {
             var resultDiv = document.getElementById("minimumResult");
             resultDiv.innerHTML = "";
 
-            // Display the minimum for each selected column
             for (var column in minimumResults) {
                 var minimumResult = minimumResults[column];
                 var resultText =
                     "Minimum for " + column + ": " + minimumResult + "<br>";
                 resultDiv.innerHTML += resultText;
             }
+            logUserAction(sampleUserID, currentCSV, "Minimum", selectedColumns, resultText);
+
+
         });
 
     document
@@ -612,6 +607,8 @@ function callMaximum() {
             var maximumResult = maximumResults[column];
             var resultText = "Maximum for " + column + ": " + maximumResult + "<br>";
             resultDiv.innerHTML += resultText;
+            logUserAction(sampleUserID, currentCSV, "Maximum", selectedColumns, resultText);
+
         });
 
     document
@@ -668,6 +665,8 @@ function callStandardDeviation() {
                 standardDeviationResult +
                 "<br>";
             resultDiv.innerHTML += resultText;
+            logUserAction(sampleUserID, currentCSV, "Standard Deviation", selectedColumns, resultText);
+
         });
 
     document
@@ -686,7 +685,6 @@ function callCountOfValues() {
             var modal = document.getElementById("countOfValuesModal");
             modal.style.display = "block";
 
-            c;
         });
 
     document
@@ -722,6 +720,8 @@ function callCountOfValues() {
             var resultText =
                 "Count of Values for " + column + ": " + countOfValuesResult + "<br>";
             resultDiv.innerHTML += resultText;
+            logUserAction(sampleUserID, currentCSV, "Count of Values", selectedColumns, resultText);
+
         });
 
     document
@@ -751,7 +751,6 @@ function initializeCalculatorModal() {
         "countOfValuesColumn"
     );
 
-    callChi();
     callMean();
     callMedian();
     callMode();
