@@ -103,7 +103,7 @@ function updateSlideshow() {
 }
 
 function nextChart() {
-  currentChartIndex = (globalChartIndex + 1) % charts.length;
+  currentChartIndex = (globalChartIndex + 2) % charts.length;
   updateSlideshow();
 }
 

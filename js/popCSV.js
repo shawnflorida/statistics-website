@@ -33,21 +33,17 @@ function handleFileSelect(event) {
   }
 }
 
-// Render CSV data
 function renderCSVData(csvData) {
   var lines = csvData.split("\n");
-  var jsonData = []; // Array to store JSON data
-  var columnNames = lines[0].split(","); // Extract column names from the header
+  var jsonData = []; /
+  var columnNames = lines[0].split(","); 
 
-  // Process each line of the CSV data
   for (var i = 1; i < lines.length; i++) {
     var columns = lines[i].split(",");
     var rowData = {};
 
-    // Check if the row has valid data
     var isValidRow = true;
 
-    // Process each column of the CSV data
     for (var j = 0; j < columns.length; j++) {
       var trimmedValue = columns[j].trim();
       if (
@@ -61,7 +57,6 @@ function renderCSVData(csvData) {
       rowData[columnNames[j]] = trimmedValue;
     }
 
-    // If the row has valid data, add it to the JSON array
     if (isValidRow) {
       jsonData.push(rowData);
     }
@@ -69,18 +64,15 @@ function renderCSVData(csvData) {
 
   currentCSV = jsonData;
 
-  // Store the column names in the global array
   columnNamesArray = columnNames;
   console.log(columnNamesArray);
 
-  // Create a chart for each column
   for (var column in columnNames) {
     if (column !== "") {
       createChart(jsonData, columnNames[column]);
     }
   }
 
-  // Update the slideshow immediately
   updateSlideshow();
   showSlideshowControls();
   showButtonContainer2();
