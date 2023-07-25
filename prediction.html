@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Prediction Algorithms</title>
+    <link rel="icon" type="image/x-icon" href="/assets/bg.png">
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/prediction.css" />
+
+    <link rel="stylesheet" href="css/footer.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap"
+      rel="stylesheet" />
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+  </head>
+
+  <body>
+
+    <div class="container">
+      <h1 class="title">Prediction Algorithms</h1>
+      <a href="index.html" id="goBackLink" class="arrow-link">&#x2B9C</a>
+
+      <!-- Linear Regression -->
+      <div class="content" id="LR">
+        <h2 class="heading">Linear Regression</h2>
+        <p>
+          Linear regression is one of the most popular modeling techniques
+          because, in addition to explaining the
+          relationship between variables (like correlation), it also gives an
+          equation that can be used to predict the
+          value of a response variable based on a value of the predictor
+          variable.
+        </p>
+        <p>
+          The formula for simple linear regression is Y = mX + b, where Y is the
+          response (dependent) variable, X is the
+          predictor (independent) variable, m is the estimated slope, and b is
+          the estimated intercept.
+        </p>
+
+        <h3 class="subhead">When to use linear regression</h3>
+        <p>
+          If you're thinking simple linear regression may be appropriate for
+          your project, first make sure it meets the
+          assumptions of linear regression listed below. Have a look at our
+          analysis checklist for more information on
+          each:
+        </p>
+        <ul>
+          <li>Linear relationship</li>
+          <li>Normally-distributed scatter</li>
+          <li>Homoscedasticity</li>
+          <li>No uncertainty in predictors</li>
+          <li>Independent observations</li>
+          <li>Variables (not components) are used for estimation</li>
+        </ul>
+
+        <h3 class="subhead">Calculating linear regression</h3>
+        <p>
+          While it is possible to calculate linear regression by hand, it
+          involves a lot of sums and squares, not to
+          mention sums of squares! So if you're asking how to find linear
+          regression coefficients or how to find the least
+          squares regression line, the best answer is to use software that does
+          it for you. Linear regression calculators
+          determine the line-of-best-fit by minimizing the sum of squared error
+          terms (the squared difference between the
+          data points and the line).
+        </p>
+        <p>
+          The calculator above will graph and output a simple linear regression
+          model for you, along with testing the
+          relationship and the model equation. Remember that Y is your dependent
+          variable: the one you're ultimately
+          interested in predicting (e.g. cost of homes). X is simply a variable
+          used to make that prediction (eq.
+          square-footage of homes).
+        </p>
+
+        <h3 class="subhead">Interpreting results</h3>
+        <p>Using the formula <span class="formula">Y = mX + b:</span></p>
+        <ul>
+          <li>The linear regression interpretation of the slope coefficient, m,
+            is, "The estimated change in Y for a
+            1-unit increase of X."</li>
+          <li>The interpretation of the intercept parameter, b, is,
+            "The estimated value of Y when X equals 0."</li>
+        </ul>
+        <p>
+          The first portion of results contains the best fit values of the slope
+          and Y-intercept terms. These parameter
+          estimates build the regression line of best fit. You can see how they
+          fit into the equation at the bottom of the
+          results section. Our guide can help you learn more about interpreting
+          regression slopes, intercepts, and
+          confidence intervals.
+        </p>
+        <p>
+          Use the goodness of fit section to learn how close the relationship
+          is. R-square quantifies the percentage of
+          variation in Y that can be explained by its value of X.
+        </p>
+        <p>
+          The next question may seem odd at first glance: Is the slope
+          significantly non-zero? This goes back to the slope
+          parameter specifically. If it is significantly different from zero,
+          then there is reason to believe that X can
+          be used to predict Y. If not, the model's line is not any better than
+          no line at all, so the model is not
+          particularly useful!
+        </p>
+        <p>
+          P-values help with interpretation here: If it is smaller than some
+          threshold (often .05), we have evidence to
+          suggest a statistically significant relationship.
+        </p>
+        <p>
+          Finally, the equation is given at the end of the results section. Plug
+          in any value of X (within the dataset
+          range anyway) to calculate the corresponding prediction for its Y
+          value.
+        </p>
+      </div>
+
+      <!-- Random Forest -->
+      <div class="content" id="RF">
+        <h2 class="heading">Random Forest</h2>
+        <p>
+          Do you want to build a powerful and robust machine learning model that
+          can handle both classification and
+          regression problems? Do you want to use multiple decision trees to
+          improve the accuracy and stability of your
+          predictions? Do you want to rank the importance of your input
+          variables and select the best features for your
+          model?
+        </p>
+        <p>
+          If you answered yes to any of these questions, then you should try the
+          Random Forest Prediction Tool!
+        </p>
+        <p>
+          The Random Forest Prediction Tool is a web-based application that
+          allows you to perform random forest analysis
+          on your own data. You can upload your data as a CSV file, choose the
+          number of trees and the number of features
+          to use, and get the results in a matter of seconds.
+        </p>
+        <p>
+          The Random Forest Prediction Tool will show you:
+        </p>
+        <ul>
+          <li>The predicted outcome for each observation in your data set, based
+            on the majority vote or the average of
+            the individual trees.</li>
+          <li>The out-of-bag error, which measures how well the model predicts
+            the observations that are not included in
+            each bootstrap sample.</li>
+          <li>The confusion matrix and the accuracy score, which show how well
+            the model classifies the observations into
+            their true labels (for classification problems).</li>
+          <li>The feature importance scores, which indicate how much each
+            feature contributes to reducing the impurity or
+            variance in each split node.</li>
+        </ul>
+
+        <h3 class="subhead">When to Use Random Forest</h3>
+        <p>
+          Random forest is a versatile and powerful machine learning algorithm
+          that can be used for both classification
+          and regression problems. It is especially suitable for:
+        </p>
+        <ul>
+          <li>Dealing with high dimensional data, as it can handle thousands of
+            input variables without variable deletion.
+          </li>
+          <li>Dealing with unbalanced data sets, as it can balance the error in
+            class populations using stratified
+            sampling.</li>
+          <li>Dealing with missing values, as it can maintain accuracy even when
+            a large proportion of the data is
+            missing.</li>
+          <li>Improving the accuracy and stability of decision trees, as it
+            reduces the variance and prevents overfitting
+            by averaging multiple trees.</li>
+        </ul>
+        <p>However, the random forest also has some limitations, such as:</p>
+        <ul>
+          <li>Being relatively slow to train and predict, as it requires
+            building and evaluating multiple trees.
+          </li>
+          <li>Being less interpretable than single decision trees, as it is
+            difficult to explain the reasoning behind the
+            majority vote or the average of multiple trees.</li>
+          <li>Being prone to overfitting on noisy data, as it can create complex
+            trees that are not generalizable.</li>
+        </ul>
+        <p>
+          Therefore, random forest is a good choice when you need a quick and
+          reliable solution that can handle complex
+          and large-scale data, but not when you need a fast and simple solution
+          that can explain the logic behind the
+          predictions.
+        </p>
+
+        <h3 class="subhead">Calculating Random Forest</h3>
+        <p>To calculate random forest, you need to follow these steps:</p>
+        <ol>
+          <li>Specify the number of trees (n) and the number of features (m) to
+            use for each tree. These are
+            hyperparameters that need to be tuned for optimal performance.
+          </li>
+          <li>
+            For each tree, generate a bootstrap sample from the original data
+            set by randomly selecting n observations
+            with replacement. This means that some observations may be repeated
+            or omitted in each sample.
+          </li>
+          <li>
+            Grow a decision tree from each bootstrap sample by recursively
+            splitting the nodes based on the best feature
+            and the best split point. At each node, randomly select m features
+            from all the available features and find
+            the best split based on some criterion, such as Gini impurity or
+            information gain for classification, or mean
+            squared error or mean absolute error for regression. Stop splitting
+            when a node is pure (has only one class),
+            or when it reaches a minimum number of observations, or when it
+            reaches a maximum depth.
+          </li>
+          <li>
+            Make predictions for new data points by passing them through each
+            tree and obtaining an outcome from each
+            tree. For classification problems, use the majority vote of the
+            outcomes as the final prediction. For
+            regression problems, use the average of the outcomes as the final
+            prediction.
+          </li>
+        </ol>
+
+        <h3 class="subhead">Interpreting Results</h3>
+        <p>To interpret the results of random forest, you can use various
+          metrics and methods, such as:</p>
+        <ul>
+          <li>
+            The out-of-bag (OOB) error, which measures how well the model
+            predicts the observations that are not included
+            in each bootstrap sample. For each observation in the original data
+            set, find the trees that did not use that
+            observation in their bootstrap samples, and use them to make a
+            prediction for that observation. Then compare
+            the prediction with the true outcome and calculate the error rate.
+            The average error rate over all
+            observations is the OOB error. A lower OOB error indicates a better
+            model fit.
+          </li>
+          <li>
+            The confusion matrix and the accuracy score, which show how well the
+            model classifies the observations into
+            their true labels (for classification problems). The confusion
+            matrix is a table that displays the number of
+            true positives (TP), false positives (FP), true negatives (TN), and
+            false negatives (FN) for each label. The
+            accuracy score is calculated as (TP + TN) / (TP + FP + TN + FN),
+            which is the proportion of correctly
+            classified observations. A higher accuracy score indicates a better
+            model performance.
+          </li>
+          <li>
+            The feature importance scores, which indicate how much each feature
+            contributes to reducing the impurity or
+            variance in each split node. For each feature, calculate the total
+            decrease in impurity or variance weighted
+            by the number of observations in each node where that feature is
+            used for splitting. Then normalize the scores
+            by dividing them by their sum, so that they add up to one. A higher
+            feature importance score means that the
+            feature is more relevant for predicting the outcome.
+          </li>
+        </ul>
+        <p>
+          You can also use visualization tools, such as plots and graphs, to
+          display and explore the results of random
+          forest. For example, you can plot the OOB error against different
+          values of n and m to find the optimal
+          hyperparameters. You can also plot the feature importance scores as a
+          bar chart to see which features are more
+          influential than others.
+        </p>
+      </div>
+
+      <!-- KNN -->
+      <div class="content" id="KNN">
+        <h2 class="heading">KNN</h2>
+        <p>
+          Do you want to build a simple and effective machine learning model
+          that can classify or regress new data points
+          based on their similarity to existing data points? Do you want to use
+          the k-nearest neighbors algorithm, which
+          is one of the most popular and easy-to-use methods in machine
+          learning? Do you want to find the optimal value of
+          k and the best distance metric for your data?
+        </p>
+        <p>
+          If you answered yes to any of these questions, then you should try the
+          KNN Prediction Tool!
+        </p>
+        <p>
+          The KNN Prediction Tool is a web-based application that allows you to
+          perform KNN analysis on your own data. You
+          can upload your data as a CSV file, choose the value of k and the
+          distance metric to use, and get the results in
+          a matter of seconds.
+        </p>
+        <p>The KNN Prediction Tool will show you:</p>
+        <ul>
+          <li>The predicted outcome for each observation in your data set, based
+            on the majority vote or the average of
+            the k nearest neighbors.</li>
+          <li>The accuracy score, which measures how well the model predicts the
+            correct outcomes for new data points (for
+            classification problems).</li>
+          <li>The confusion matrix, which shows how many data points are
+            correctly or incorrectly classified into each
+            label (for classification problems).</li>
+          <li>The error rate, which shows how often the model makes wrong
+            predictions.</li>
+        </ul>
+        <p>
+          You can also download the results as a CSV file or a PDF report for
+          further analysis or presentation.
+        </p>
+        <p>
+          The KNN Prediction Tool is easy to use, fast, and reliable. It is
+          based on the scikit-learn library, one of the
+          most popular and widely used machine-learning frameworks in Python.
+        </p>
+
+        <h3 class="subhead">When to Use KNN</h3>
+        <p>
+          KNN is a versatile and powerful machine learning algorithm that can be
+          used for both classification and
+          regression problems. It is especially suitable for:
+        </p>
+        <ul>
+          <li>Dealing with small or medium-sized data sets, as it requires
+            storing all the training data in memory.</li>
+          <li>Dealing with multi-class problems, as it can handle multiple
+            labels without any modification.</li>
+          <li>Dealing with non-linear problems, as it does not make any
+            assumptions about the underlying distribution of
+            the data.</li>
+          <li>Exploring or prototyping new ideas, as it does not require any
+            training or parameter tuning.</li>
+        </ul>
+        <p>However, KNN also has some limitations, such as:</p>
+        <ul>
+          <li>Being sensitive to noise, outliers, and irrelevant features, as
+            they can affect the distance calculation and
+            distort the similarity measure.</li>
+          <li>Being slow to predict, as it requires calculating the distance
+            between each new data point and all the
+            existing data points.</li>
+          <li>Being less interpretable than other models, as it does not provide
+            any explanation or insight into how it
+            makes predictions.</li>
+        </ul>
+        <p>
+          Therefore, KNN is a good choice when you need a quick and simple
+          solution that can handle complex and diverse
+          data but not when you need a fast and scalable solution that can
+          explain the logic behind the predictions.
+        </p>
+
+        <h3 class="subhead">Calculating KNN</h3>
+        <p>To calculate KNN, you need to follow these steps:</p>
+        <ol>
+          <li>Specify the value of k and the distance metric to use. These are
+            hyperparameters that need to be tuned for
+            optimal performance. Common distance metrics include Euclidean,
+            Manhattan, Minkowski, and Hamming.</li>
+          <li>Calculate the distance between each new data point and all other
+            existing data points using the chosen
+            distance metric. For example, if you use Euclidean distance, you can
+            use this formula:</li>
+
+          \[
+          d = \sqrt{(x2 - x1)^2 + (y2 - y1)^2}
+          \]
+
+          <li>Find the k smallest distances and their corresponding data points.
+            These are the k nearest neighbors for
+            each new data point.</li>
+          <li>Make predictions for each new data point by using the majority
+            vote or the average of the k nearest
+            neighbors. For classification problems, use the most frequent label
+            among the k nearest neighbors as the
+            prediction. For regression problems, use the mean value of the
+            outcomes of the k nearest neighbors as the
+            prediction.</li>
+        </ol>
+
+        <h3 class="subhead">Interpreting Results</h3>
+        <p>To interpret the results of KNN, you can use various metrics and
+          methods, such as:</p>
+        <ul>
+          <li>
+            The accuracy score, which measures how well the model predicts the
+            correct labels for new data points (for
+            classification problems). It is calculated as the ratio of correctly
+            classified observations to total
+            observations. A higher accuracy score indicates a better model
+            performance.
+          </li>
+          <li>
+            The confusion matrix, which shows how many data points are correctly
+            or incorrectly classified into each label
+            (for classification problems). It is a table that displays the
+            number of true positives (TP), false positives
+            (FP), true negatives (TN), and false negatives (FN) for each label.
+            For example, if you have a test set of 10
+            new fruits with their true labels as Apple (A), Pear (P), or Banana
+            (B), you can create a table that displays
+            how many are predicted as A, P, or B by KNN. The table below shows
+            an example of a confusion matrix:
+          </li>
+
+          <table border="1">
+            <tr>
+              <th>True Label/Predicted Label</th>
+              <th>A</th>
+              <th>P</th>
+              <th>B</th>
+            </tr>
+            <tr>
+              <td>A</td>
+              <td>3</td>
+              <td>0</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>P</td>
+              <td>0</td>
+              <td>2</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>B</td>
+              <td>1</td>
+              <td>0</td>
+              <td>3</td>
+            </tr>
+          </table>
+
+          <li class="indent">
+            The diagonal elements show the number of true positives (TP) for
+            each label, which are the data points that
+            are correctly classified into their true labels. For example, there
+            are 3 TP for label A, 2 TP for label P,
+            and 3 TP for label B.
+          </li>
+          <li class="indent">
+            The off-diagonal elements show the number of false positives (FP)
+            and false negatives (FN) for each label,
+            which are the data points that are incorrectly classified into a
+            wrong label. For example, there is 1 FP for
+            label A, which means that a data point that is not an Apple is
+            predicted as an Apple. There is also 1 FN for
+            label A, which means that a data point that is an Apple is predicted
+            as not an Apple.
+          </li>
+          <li>
+            The error rate, which shows how often the model makes wrong
+            predictions. It can be calculated as the ratio of
+            the number of incorrect predictions to the total number of
+            predictions. For example, if we have a test set of
+            10 new fruits and KNN makes 2 wrong predictions, then the error rate
+            is 0.2 or 20%.
+          </li>
+        </ul>
+        <p>
+          You can also use visualization tools, such as plots and graphs, to
+          display and explore the results of KNN. For
+          example, you can plot the accuracy score against different values of k
+          and the distance metric to find the
+          optimal hyperparameters. You can also plot the data points and their
+          labels in a scatter plot to see how they
+          are clustered by KNN.
+        </p>
+      </div>
+
+      <!-- Time Series -->
+      <div class="content" id="TS">
+        <h2 class="heading">Time Series</h2>
+        <p>
+          Do you want to build a sophisticated and accurate machine-learning
+          model that can forecast future values based
+          on historical data? Do you want to use time series analysis, which is
+          one of the most advanced and widely used
+          methods in machine learning? Do you want to find the best model and
+          parameters for your data?
+        </p>
+        <p>
+          If you answered yes to any of these questions, then you should try the
+          Time Series Prediction Tool!
+        </p>
+        <p>
+          The Time Series Prediction Tool is a web-based application that allows
+          you to perform time series analysis on
+          your own data. You can upload your data as a CSV file, choose the type
+          of model and the parameters to use, and
+          get the results in a matter of seconds.
+        </p>
+        <p>The Time Series Prediction Tool will show you:</p>
+        <ul>
+          <li>The predicted values for each observation in your data set, based
+            on the chosen model and parameters.</li>
+          <li>The mean absolute error (MAE), which measures how close the
+            predicted values are to the actual values.</li>
+          <li>The mean absolute percentage error (MAPE), which measures how
+            close the predicted values are to the actual
+            values as a percentage.</li>
+          <li>The root mean squared error (RMSE), which measures how much the
+            predicted values deviate from the actual
+            values.</li>
+        </ul>
+        <p>You can also download the results as a CSV file or a PDF report for
+          further analysis or presentation.</p>
+        <p>The Time Series Prediction Tool is easy to use, fast, and reliable.
+          It is based on the statsmodels library,
+          which is one of the most popular and comprehensive machine learning
+          frameworks in Python.</p>
+
+        <h3 class="subhead">When to Use Time Series</h3>
+        <p>Time series is a powerful and complex machine learning algorithm that
+          can be used for forecasting problems. It
+          is especially suitable for:</p>
+        <ul>
+          <li>Dealing with sequential data, as it captures the temporal
+            dependence and dynamics of the data.</li>
+          <li>Dealing with trend and seasonality, as it models the long-term and
+            short-term patterns of the data.</li>
+          <li>Dealing with uncertainty and noise, as it incorporates confidence
+            intervals and error terms into the
+            predictions.</li>
+        </ul>
+        <p>However, time series also has some limitations, such as:</p>
+        <ul>
+          <li>Being sensitive to missing values and outliers, as they can affect
+            the quality and validity of the
+            predictions.</li>
+          <li>Being computationally intensive and slow, as it requires fitting
+            multiple models and parameters to find the
+            best fit.</li>
+          <li>Being difficult to interpret and explain, as it involves complex
+            mathematical formulas and assumptions.</li>
+        </ul>
+        <p>
+          Therefore, time series is a good choice when you need a sophisticated
+          and accurate solution that can handle
+          sequential and dynamic data, but not when you need a simple and fast
+          solution that can explain the logic behind
+          the predictions.
+        </p>
+
+        <h3 class="subhead">Calculating Time Series</h3>
+        <p>To calculate time series, you need to follow these steps:</p>
+        <ol>
+          <li>
+            Specify the type of model and the parameters to use. There are
+            different types of models for time series
+            analysis, such as autoregressive (AR), moving average (MA),
+            autoregressive moving average (ARMA),
+            autoregressive integrated moving average (ARIMA), seasonal
+            autoregressive integrated moving average (SARIMA),
+            exponential smoothing (ES), etc. Each model has different parameters
+            that need to be tuned for optimal
+            performance, such as order, lag, differencing, seasonality, trend,
+            etc.
+          </li>
+          <li>
+            Fit the model to the historical data using some criterion, such as
+            Akaike information criterion (AIC),
+            Bayesian information criterion (BIC), or mean squared error (MSE).
+            This involves estimating the coefficients
+            and error terms of the model using some method, such as maximum
+            likelihood estimation (MLE) or ordinary least
+            squares (OLS).
+          </li>
+          <li>
+            Validate the model using some tests, such as Ljung-Box test,
+            Durbin-Watson test, or Augmented Dickey-Fuller
+            test. These tests check whether the model satisfies some assumptions
+            or properties, such as stationarity,
+            independence, normality, etc.
+          </li>
+          <li>
+            Make predictions for future data points using the fitted model and
+            parameters. This involves extrapolating or
+            interpolating the values based on the historical data and the model
+            equation.
+          </li>
+        </ol>
+
+        <h3 class="subhead">Interpreting Results</h3>
+        <p>To interpret the results of time series, you can use various metrics
+          and methods, such as:</p>
+        <ul>
+          <li>The mean absolute error (MAE), which measures how close the
+            predicted values are to the actual values. It is
+            calculated as the average of the absolute differences between the
+            predicted values and the actual values. A
+            lower MAE indicates a better model fit.</li>
+          <li>The mean absolute percentage error (MAPE), which measures how
+            close the predicted values are to the actual
+            values as a percentage. It is calculated as the average of the
+            absolute differences between the predicted
+            values and the actual values divided by the actual values. A lower
+            MAPE indicates a better model fit.</li>
+          <li>The root mean squared error (RMSE), which measures how much the
+            predicted values deviate from the actual
+            values. It is calculated as the square root of the average of the
+            squared differences between the predicted
+            values and the actual values. A lower RMSE indicates a better model
+            fit.</li>
+        </ul>
+        <p>
+          You can also use visualization tools, such as plots and graphs, to
+          display and explore the results of time
+          series. For example, you can plot the historical data and the
+          predicted data in a line chart to see how well
+          they match. You can also plot the residuals or the errors in a
+          histogram or a box plot to see how they are
+          distributed.
+        </p>
+
+        <h3 class="subhead">Here are some videos that you might find helpful:</h3>
+        <ul>
+          <li>
+            Linear Regression:
+            <a href="https://youtu.be/ZvfO7-J5u34">https://youtu.be/ZvfO7-J5u34</a>
+          </li>
+          <li>
+            Random Forest:
+            <a href="https://youtu.be/v6VJ2RO66Ag">https://youtu.be/v6VJ2RO66Ag</a>
+          </li>
+          <li>
+            KNN:
+            <a href="https://youtu.be/HVXime0nQeI">https://youtu.be/HVXime0nQeI</a>
+          </li>
+          <li>
+            Time Series:
+            <a href="https://youtu.be/Xi_Xs62WWCg">https://youtu.be/Xi_Xs62WWCg</a>
+          </li>
+        </ul>
+      </div>
+
+    </body>
+
+  </html>

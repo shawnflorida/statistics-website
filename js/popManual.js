@@ -12,7 +12,6 @@ manualDataButton.addEventListener("click", function (e) {
   modal.style.display = "block";
 });
 
-
 closeButton.addEventListener("click", function () {
   modal.style.display = "none";
 });
@@ -20,17 +19,83 @@ closeButton.addEventListener("click", function () {
 addDataButton.addEventListener("click", function () {
   var input = inputDataField.value.trim();
   if (input !== "") {
-    dataItems.push(input);
+    // Split the input into separate column names using commas
+    var newItems = input.split(",").map(function (item) {
+      return item.trim();
+    });
+    // Add the new column names to the dataItems array
+    dataItems = dataItems.concat(newItems);
     renderDataList();
     inputDataField.value = "";
   }
 });
 
 processDataButton.addEventListener("click", function () {
-  console.log("Manually entered data list:", dataItems);
-  console.log("Column count:", dataItems.length);
-  // Process the manually entered data list
-  // ...
+  if (dataItems.length === 0) {
+    alert("Please enter column names first!");
+    return;
+  }
+
+  var numberOfColumns = dataItems.length;
+  var columnDataInputs = document.createElement("div");
+  columnDataInputs.classList.add("column-data-inputs");
+
+  for (var i = 0; i < numberOfColumns; i++) {
+    var label = document.createElement("label");
+    label.textContent = "Enter values for Column " + dataItems[i] + ":";
+    var input = document.createElement("input");
+    input.type = "text";
+    input.name = "column_" + (i + 1);
+    columnDataInputs.appendChild(label);
+    columnDataInputs.appendChild(input);
+  }
+
+  // Hide the current modal
+  modal.style.display = "none";
+
+  // Create a new modal for inputting column values
+  var columnValuesModal = document.createElement("div");
+  columnValuesModal.classList.add("modal");
+
+  var modalContent = document.createElement("div");
+  modalContent.classList.add("modal-content");
+
+  var closeColumnValuesModal = document.createElement("span");
+  closeColumnValuesModal.classList.add("close");
+  closeColumnValuesModal.textContent = "×";
+  modalContent.appendChild(closeColumnValuesModal);
+
+  var header = document.createElement("h2");
+  header.textContent = "Enter Values for Each Column";
+  modalContent.appendChild(header);
+
+  modalContent.appendChild(columnDataInputs);
+
+  var processColumnValuesButton = document.createElement("button");
+  processColumnValuesButton.textContent = "Process Column Values";
+  modalContent.appendChild(processColumnValuesButton);
+
+  columnValuesModal.appendChild(modalContent);
+  document.body.appendChild(columnValuesModal);
+
+  // Display the new modal
+  columnValuesModal.style.display = "block";
+
+  // Event listener for processing column values
+  processColumnValuesButton.addEventListener("click", function () {
+    var columnValues = [];
+    var inputs = columnDataInputs.querySelectorAll("input");
+    for (var j = 0; j < inputs.length; j++) {
+      var value = inputs[j].value.trim();
+      columnValues.push(value);
+    }
+
+    console.log("Column Values:", columnValues);
+    // Do further processing with the entered column values here
+
+    // Close the column values modal
+    columnValuesModal.style.display = "none";
+  });
 });
 
 function renderDataList() {
@@ -42,28 +107,9 @@ function renderDataList() {
     dataList.appendChild(li);
   });
 
-  // Display column count as a bullet point
   var columnCount = document.createElement("li");
   columnCount.textContent = "Column count: " + items.length;
   dataList.appendChild(columnCount);
 }
 
-// Event listener for the manualDataButton
-document
-  .getElementById("manualDataButton")
-  .addEventListener("click", showButtonContainer2);
-
-// Function to show the second set of buttons (button-container-2)
-function showButtonContainer2() {
-  var buttonContainer2 = document.querySelector(".button-container-2");
-  var buttonContainer2Header = document.querySelector(
-    ".button-container-2-header"
-  );
-  buttonContainer2.style.display = "flex";
-  buttonContainer2Header.style.display = "flex";
-}
-
-function showSlideshowControls() {
-  var controls = document.querySelector(".slideshow-controls");
-  controls.style.visibility = "visible";
-}
+// ... rest of the code ...

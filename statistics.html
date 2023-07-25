@@ -1,71 +1,186 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Statistics Webpage</title>
-    <link rel="stylesheet" href="css/nav.css" />
-    <link rel="stylesheet" href="css/index.css" />
-  </head>
-  <body>
-    <nav class="navbar"></nav>
+
+<head>
+  <title>Statistical Tests</title>
+  <link rel="icon" type="image/x-icon" href="/assets/bg.png">
+  <link rel="stylesheet" href="css/index.css" />
+  <link rel="stylesheet" href="css/statisticsInfo.css" />
 
 
-    <h2>One-Way ANOVA</h2>
-    <p>
-      One-way ANOVA is a statistical test used to analyze the difference between
-      the means of more than two groups. It uses one independent variable and
-      one quantitative dependent variable. ANOVA tells you if the dependent
-      variable changes according to the level of the independent variable. You
-      can use a one-way ANOVA when you have collected data about one categorical
-      independent variable and one quantitative dependent variable. The
-      independent variable should have at least three levels (i.e. at least
-      three different groups or categories). The null hypothesis (H0) of ANOVA
-      is that there is no difference among group means. The alternative
-      hypothesis (Ha) is that at least one group differs significantly from the
-      overall mean of the dependent variable.
-    </p>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap" rel="stylesheet" />
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+</head>
 
-    <h2>T-Test</h2>
-    <p>
-      T-Test is a statistical test that is used to compare the means of two
-      groups. It is often used in hypothesis testing to determine whether a
-      process or treatment actually has an effect on the population of interest,
-      or whether two groups are different from one another.
-    </p>
+<body>
+  
 
-    <h2>Pearson’s Correlation</h2>
-    <p>
-      Pearson’s Correlation is a statistical test that measures the strength and
-      direction of the relationship between two quantitative variables. It is a
-      number between –1 and 1 that measures the strength and direction of the
-      linear relationship between two variables. Pearson’s r is the most common
-      way of measuring a linear correlation. Pearson’s r describes the linear
-      relationship between two quantitative variables. These are the assumptions
-      your data must meet if you want to use Pearson’s r: Both variables are on
-      an interval or ratio level of measurement.
-    </p>
+  <div class="container">
+    <h1 class="title">Statistical Tests</h1>
+    <a href="index.html" id="goBackLink" class="arrow-link">&#x2B9C</a>
 
-    <h2>Spearman Rho</h2>
-    <p>
-      Spearman Rho is a statistical test used to measure the strength and
-      direction of the relationship between two variables. It is a
-      non-parametric test which means that it does not assume that the data is
-      normally distributed. Instead of using the actual values of the variables,
-      it uses their ranks. The Spearman correlation coefficient (ρ) is a number
-      between -1 and 1 that measures the strength and direction of the
-      relationship between two variables.
-    </p>
+    
+    <!-- One-Way ANOVA -->
+    <div class="content" id="ANOVA">
+      <h2 class="heading">One-Way ANOVA</h2>
+      <p>
+        One-way ANOVA is a statistical test used to analyze the difference between the means of more than two groups. It
+        uses one independent variable and one quantitative dependent variable. ANOVA tells you if the dependent variable
+        changes according to the level of the independent variable. You can use a one-way ANOVA when you have collected
+        data about one categorical independent variable and one quantitative dependent variable. The independent
+        variable should have at least three levels (i.e. at least three different groups or categories). The null
+        hypothesis (H0) of ANOVA is that there is no difference among group means. The alternative hypothesis (Ha) is
+        that at least one group differs significantly from the overall mean of the dependent variable.
+      </p>
+      <p>
+        To compute One-way ANOVA, you can use the following formula:
+        <br>
+        where:
+      </p>
+      <ul>
+        <li>SST = sum of squares total</li>
+        <li>SSB = sum of squares between groups</li>
+        <li>SSW = sum of squares within groups</li>
+        <li>k = number of groups</li>
+        <li>n = total number of observations</li>
+      </ul>
+      <p>
+        To interpret the result given by One-way ANOVA, you can use post-hoc testing which is used to determine which
+        groups are significantly different from each other. There are several post-hoc tests available such as Tukey’s
+        HSD, Bonferroni correction, Scheffe’s method, and others.
+      </p>
+    </div>
 
-    <h2>Chi-Square</h2>
-    <p>
-      Chi-Square is a statistical test used to determine whether there is a
-      significant association between two categorical variables. It is used when
-      you have two categorical variables from a single population and you want
-      to know if one of the variables affects the other. The test is used to
-      determine whether the observed frequencies in each category are
-      significantly different from the expected frequencies.
-    </p>
+    <!-- T-Test -->
+    <div class="content" id="t-test">
+      <h2 class="heading">T-Test</h2>
+      <p>
+        T-Test is a statistical test that is used to compare the means of two groups. It is often used in hypothesis
+        testing to determine whether a process or treatment actually has an effect on the population of interest, or
+        whether two groups are different from one another.
+      </p>
+      <p>
+        To compute T-Test, you can use the following formula:
+        <br>
+        where:
+      </p>
+      <ul>
+        <li>x̄1 = mean of sample 1</li>
+        <li>x̄2 = mean of sample 2</li>
+        <li>s1 = standard deviation of sample 1</li>
+        <li>s2 = standard deviation of sample 2</li>
+        <li>n1 = size of sample 1</li>
+        <li>n2 = size of sample 2</li>
+      </ul>
+      <p>
+        To interpret the result given by T-Test, you can use the p-value which is the probability that the difference
+        between the two groups is due to chance. If the p-value is less than or equal to your significance level
+        (usually 0.05), then you can reject the null hypothesis and conclude that there is a significant difference
+        between the two groups.
+      </p>
+    </div>
 
-    <h3>Helpful Videos</h3>
+    <!-- Pearson’s Correlation -->
+    <div class="content" id="PC">
+      <h2 class="heading">Pearson’s Correlation</h2>
+      <p>
+        Pearson’s Correlation is a statistical test that measures the strength and direction of the relationship between
+        two quantitative variables. It is a number between –1 and 1 that measures the strength and direction of the
+        linear relationship between two variables. Pearson’s r is the most common way of measuring a linear correlation.
+        Pearson’s r describes the linear relationship between two quantitative variables. These are the assumptions your
+        data must meet if you want to use Pearson’s r: Both variables are on an interval or ratio level of measurement.
+      </p>
+      <p>
+        To compute Pearson’s Correlation, you can use the following formula:
+        <br>
+        where:
+      </p>
+      <ul>
+        <li>r = Pearson correlation coefficient</li>
+        <li>Σ = sum of</li>
+        <li>x = variable 1</li>
+        <li>y = variable 2</li>
+        <li>n = number of observations</li>
+      </ul>
+      <p>
+        To interpret the result given by Pearson’s Correlation, you can use the following rules of thumb:
+      </p>
+      <ul>
+        <li>r > 0 indicates a positive association</li>
+        <li>r < 0 indicates a negative association</li>
+        <li>r = 0 indicates no association between the variables</li>
+        <li>The closer r is to -1 or 1, the stronger the association between the variables</li>
+      </ul>
+    </div>
+
+    <!-- Spearman Rho  -->
+    <div class="content" id="SR">
+      <h2 class="heading">Spearman Rho</h2>
+      <p>
+        Spearman Rho is a statistical test used to measure the strength and direction of the relationship between two
+        variables. It is a non-parametric test which means that it does not assume that the data is normally
+        distributed. Instead of using the actual values of the variables, it uses their ranks. The Spearman correlation
+        coefficient (ρ) is a number between -1 and 1 that measures the strength and direction of the relationship
+        between two variables.
+      </p>
+      <p>
+        To compute Spearman Rho, you can use the following formula:
+        <br>
+        where:
+      </p>
+      <ul>
+        <li>ρ = Spearman correlation coefficient</li>
+        <li>di = difference between ranks</li>
+        <li>n = number of observations</li>
+      </ul>
+      <p>To interpret the result given by Spearman Rho:</p>
+      <ul>
+        <li>ρ > 0 indicates a positive association</li>
+        <li>ρ < 0 indicates a negative association</li>
+        <li>ρ = 0 indicates no association between the variables</li>
+        <li>The closer ρ is to -1 or 1, the stronger the association between the variables</li>
+      </ul>
+    </div>
+
+    <!-- Chi-Square -->
+    <div class="content" id="CS">
+      <h2 class="heading">Chi-Square</h2>
+      <p>
+        Chi-Square is a statistical test used to determine whether there is a significant association between two
+        categorical variables. It is used when you have two categorical variables from a single population and you want
+        to know if one of the variables affects the other. The test is used to determine whether the observed
+        frequencies in each category are significantly different from the expected frequencies.
+      </p>
+      <p>
+        To compute Chi-Square, you can use the following formula:
+        <br>
+        where:
+      </p>
+      <ul>
+        <li>χ2 = chi-square statistic</li>
+        <li>O = observed frequency</li>
+        <li>E = expected frequency</li>
+      </ul>
+      <p>To interpret the result given by Chi-Square:</p>
+      <ul>
+        <li>
+          If χ2 is greater than the critical value from the chi-square distribution table with degrees of freedom equal
+          to (r - 1) x (c - 1), then you can reject the null hypothesis and conclude that there is a significant
+          association between the two variables.
+        </li>
+        <li>
+          If χ2 is less than or equal to the critical value from the chi-square distribution table with degrees of
+          freedom equal to (r - 1) x (c - 1), then you cannot reject the null hypothesis and conclude that there is no
+          significant association between the two variables.
+        </li>
+      </ul>
+    </div>
+
+    <h3 class="subhead">Here are some videos that you might find helpful:</h3>
     <ul>
       <li>
         One-Way ANOVA:
@@ -84,5 +199,8 @@
         <a href="https://youtu.be/ibEHzQ5kKtg">https://youtu.be/ibEHzQ5kKtg</a>
       </li>
     </ul>
-  </body>
+  </div>
+
+</body>
+
 </html>

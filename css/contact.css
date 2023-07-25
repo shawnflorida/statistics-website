@@ -1,0 +1,43 @@
+label {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.map-name-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  max-width: 400px;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+h2 {
+  margin-top: 20px;
+}
+.arrow-link {
+  position: relative;
+  display: inline-block;
+  font-size: 20px;
+  padding-right: 5px; /* Add some space on the right for the arrow */
+  text-decoration: none;
+}
+
+.arrow-link::after {
+  content: "Click this if you want to go back to E-Statistica."; /* Unicode arrow character, you can change it to your preferred arrow icon */
+  right: 0;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.arrow-link:hover::after {
+  opacity: 1; /* Show the arrow when hovered */
+}

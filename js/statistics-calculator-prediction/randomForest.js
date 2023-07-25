@@ -211,7 +211,7 @@ function callRandomForest() {
 
       var resultDiv = document.getElementById("randomForestResult");
       resultDiv.innerHTML = randomForestResult;
-      logUserAction(sampleUserID, currentCSV, "Random Forest", selectedColumns + " Tree: " + treeValue, randomForestResult);
+      logUserAction(sampleUserID, csvName, "Random Forest", selectedColumns + ",Tree:" + treeValue, randomForestResult);
 
     });
 

@@ -209,7 +209,7 @@ function callTimeSeries() {
       var resultDiv = document.getElementById("timeSeriesResult");
       resultDiv.innerHTML = timeSeriesResult;
 
-      logUserAction(sampleUserID, currentCSV, "Time Series", selectedColumns, timeSeriesResult);
+      logUserAction(sampleUserID, csvName, "Time Series", selectedColumns, timeSeriesResult);
 
     });
 

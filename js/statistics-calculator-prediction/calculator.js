@@ -298,7 +298,7 @@ function callMean() {
             var resultText = "Mean for " + column + ": " + meanResult + "<br>";
             resultDiv.innerHTML += resultText;
 
-            logUserAction(sampleUserID, currentCSV, "Mean", selectedColumns, resultText);
+            logUserAction(sampleUserID, csvName, "Mean", selectedColumns, resultText);
 
         });
 
@@ -349,7 +349,7 @@ function callMedian() {
             var medianResult = medianResults[column];
             var resultText = "Median for " + column + ": " + medianResult + "<br>";
             resultDiv.innerHTML += resultText;
-            logUserAction(sampleUserID, currentCSV, "Mean", selectedColumns, resultText);
+            logUserAction(sampleUserID, csvName, "Mean", selectedColumns, resultText);
 
         });
 
@@ -398,7 +398,7 @@ function callMode() {
             var modeResult = modeResults[column];
             var resultText = "Mode for " + column + ": " + modeResult + "<br>";
             resultDiv.innerHTML += resultText;
-            logUserAction(sampleUserID, currentCSV, "Mode", selectedColumns, resultText);
+            logUserAction(sampleUserID, csvName, "Mode", selectedColumns, resultText);
 
         });
 
@@ -448,7 +448,7 @@ function callRange() {
             var rangeResult = rangeResults[column];
             var resultText = "Range for " + column + ": " + rangeResult + "<br>";
             resultDiv.innerHTML += resultText;
-            logUserAction(sampleUserID, currentCSV, "Range", selectedColumns, resultText);
+            logUserAction(sampleUserID, csvName, "Range", selectedColumns, resultText);
 
         });
 
@@ -506,7 +506,7 @@ function callVariance() {
             var resultText =
                 "Variance for " + column + ": " + varianceResult + "<br>";
             resultDiv.innerHTML += resultText;
-            logUserAction(sampleUserID, currentCSV, "Variance", selectedColumns, resultText);
+            logUserAction(sampleUserID, csvName, "Variance", selectedColumns, resultText);
 
         });
 
@@ -554,7 +554,7 @@ function callMinimum() {
                     "Minimum for " + column + ": " + minimumResult + "<br>";
                 resultDiv.innerHTML += resultText;
             }
-            logUserAction(sampleUserID, currentCSV, "Minimum", selectedColumns, resultText);
+            logUserAction(sampleUserID, csvName, "Minimum", selectedColumns, resultText);
 
 
         });
@@ -607,7 +607,7 @@ function callMaximum() {
             var maximumResult = maximumResults[column];
             var resultText = "Maximum for " + column + ": " + maximumResult + "<br>";
             resultDiv.innerHTML += resultText;
-            logUserAction(sampleUserID, currentCSV, "Maximum", selectedColumns, resultText);
+            logUserAction(sampleUserID, csvName, "Maximum", selectedColumns, resultText);
 
         });
 
@@ -665,7 +665,7 @@ function callStandardDeviation() {
                 standardDeviationResult +
                 "<br>";
             resultDiv.innerHTML += resultText;
-            logUserAction(sampleUserID, currentCSV, "Standard Deviation", selectedColumns, resultText);
+            logUserAction(sampleUserID, csvName, "Standard Deviation", selectedColumns, resultText);
 
         });
 
@@ -720,7 +720,7 @@ function callCountOfValues() {
             var resultText =
                 "Count of Values for " + column + ": " + countOfValuesResult + "<br>";
             resultDiv.innerHTML += resultText;
-            logUserAction(sampleUserID, currentCSV, "Count of Values", selectedColumns, resultText);
+            logUserAction(sampleUserID, csvName, "Count of Values", selectedColumns, resultText);
 
         });
 

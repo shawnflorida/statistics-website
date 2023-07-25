@@ -58,7 +58,8 @@ function euclideanDistance(point1, point2) {
 
 function knnChart(xValues, predictedValues, regressionEquation) {
   var ctx = document.getElementById("knnResultChart");
-
+  ctx.width = 500;
+  ctx.height = 450;
   // Check if a chart already exists on the canvas
   var existingChart = Chart.getChart(ctx);
   if (existingChart) {
@@ -131,7 +132,7 @@ function callKNN() {
       var resultDiv = document.getElementById("knnResult");
       resultDiv.innerHTML = knnResult;
 
-      logUserAction(sampleUserID, currentCSV, "K-Nearest Neighbor", selectedColumns + " K: " + kValueNumber, knnResult );
+      logUserAction(sampleUserID, csvName, "K-Nearest Neighbor", selectedColumns + ",K:" + kValueNumber, knnResult );
 
     });
 

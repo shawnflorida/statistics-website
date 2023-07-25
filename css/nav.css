@@ -36,9 +36,7 @@ ul {
   align-items: center;
 }
 
-li {
-  margin-left: 20px;
-}
+
 
 a:hover {
   color: #333;
@@ -59,14 +57,15 @@ a.logo {
 
 ul {
   margin: 0;
-  padding: 40;
+  padding: 40px;
   display: flex;
   align-items: center;
   width: 50%;
+  list-style-type: none;
 }
 
 li {
-  margin-left: 40px;
+  margin-left: 35px;
 }
 
 a {
