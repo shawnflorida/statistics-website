@@ -1,5 +1,5 @@
 
-var sampleUserID = "A4"
+var sampleUserID = ""
 
 // Function to generate a random ID
 function generateRandomID() {

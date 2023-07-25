@@ -5,16 +5,24 @@ var inputDataField = document.getElementById("inputData");
 var addDataButton = document.getElementById("addDataButton");
 var dataList = document.getElementById("dataList");
 var processDataButton = document.getElementById("processDataButton");
+var deleteLatestColumn = document.getElementById("clearColumns");
+
 var dataItems = [];
+
+
 
 manualDataButton.addEventListener("click", function (e) {
   e.preventDefault();
   modal.style.display = "block";
 });
 
-closeButton.addEventListener("click", function () {
+
+closeButton.addEventListener("click", function (e) {
+  e.preventDefault();
   modal.style.display = "none";
 });
+
+
 
 addDataButton.addEventListener("click", function () {
   var input = inputDataField.value.trim();
@@ -29,6 +37,10 @@ addDataButton.addEventListener("click", function () {
     inputDataField.value = "";
   }
 });
+
+
+
+
 
 processDataButton.addEventListener("click", function () {
   if (dataItems.length === 0) {
@@ -64,7 +76,17 @@ processDataButton.addEventListener("click", function () {
   closeColumnValuesModal.classList.add("close");
   closeColumnValuesModal.textContent = "×";
   modalContent.appendChild(closeColumnValuesModal);
+  
+  // Add click event listener to close the modal when the "×" button is clicked
+  closeColumnValuesModal.addEventListener("click", function() {
+    columnValuesModal.style.display = "none";
+  });
 
+  columnValuesModal.appendChild(modalContent);
+
+
+
+  
   var header = document.createElement("h2");
   header.textContent = "Enter Values for Each Column";
   modalContent.appendChild(header);
@@ -83,18 +105,70 @@ processDataButton.addEventListener("click", function () {
 
   // Event listener for processing column values
   processColumnValuesButton.addEventListener("click", function () {
-    var columnValues = [];
+    var columnValues = {};
     var inputs = columnDataInputs.querySelectorAll("input");
+
+    // Collect all the values into an array of arrays
+    var valuesArray = [];
     for (var j = 0; j < inputs.length; j++) {
       var value = inputs[j].value.trim();
-      columnValues.push(value);
+      var singleColumnArray = value.split(",").map(function (item) {
+        return parseFloat(item.trim());
+      });
+      valuesArray.push(singleColumnArray);
     }
 
-    console.log("Column Values:", columnValues);
-    // Do further processing with the entered column values here
+    // Determine the number of rows based on the maximum number of elements in a column
+    var numRows = Math.max(...valuesArray.map((arr) => arr.length));
 
+    // Convert the array of arrays to an array of objects where keys are column names
+    for (var i = 0; i < inputs.length; i++) {
+      columnValues[dataItems[i]] = [];
+      for (var row = 0; row < numRows; row++) {
+        columnValues[dataItems[i]].push(valuesArray[i][row] || ""); // Use an empty string if the value doesn't exist
+      }
+    }
+
+    // Convert the columnValues object to CSV format with column names included
+    var csvData = "Column," + Object.keys(columnValues).join(",") + "\n";
+    for (var row = 0; row < numRows; row++) {
+      csvData += row + 1 + ","; // Include the row number
+      csvData +=
+        Object.keys(columnValues)
+          .map(function (key) {
+            return columnValues[key][row];
+          })
+          .join(",") + "\n";
+    }
+
+    // Save the CSV data in local storage
+    localStorage.setItem("userData", csvData);
+
+    console.log(csvData);
+
+    renderCSVData(csvData);
     // Close the column values modal
     columnValuesModal.style.display = "none";
+    currentCSV = jsonData;
+    columnNamesArray = columnNames;
+    console.log(currentCSV);
+    console.log(columnNamesArray);
+
+    for (var column in columnNames) {
+      if (column !== "") {
+        createChart(jsonData, columnNames[column]);
+      }
+    }
+
+    updateSlideshow();
+    showSlideshowControls();
+    showButtonContainer2();
+    showSlideshowHeader();
+
+    setInterval(updateSlideshow, 7000);
+    initializeStatisticsModal();
+    initializeCalculatorModal();
+    initializePredictionModal();
   });
 });
 
@@ -111,5 +185,3 @@ function renderDataList() {
   columnCount.textContent = "Column count: " + items.length;
   dataList.appendChild(columnCount);
 }
-
-// ... rest of the code ...

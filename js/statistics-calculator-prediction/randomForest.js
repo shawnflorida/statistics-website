@@ -112,6 +112,8 @@ function calculateMSE(actualValues, predictedValues) {
 
 function randomForestChart(xValues, yValues, predictedValues) {
   var ctx = document.getElementById("randomForestResultChart");
+  ctx.height = 300;
+  ctx.width = 450;
 
   // Check if a chart already exists on the canvas
   var existingChart = Chart.getChart(ctx);

@@ -69,7 +69,7 @@ submitBtn.addEventListener("click", () => {
         loader.style.display = "none";
         showAlert("Success");
 
-        window.location.href = "login.html";
+        window.location.href = "index.html";
         
       }, 1000);
     }

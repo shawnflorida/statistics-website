@@ -33,12 +33,15 @@ function handleFileSelect(event) {
       renderCSVData(csvData);
     };
     reader.readAsText(file);
+
+
     csvName = file.name; // Get the name of the selected CSV file
-    console.log("Selected CSV file name:", csvName);
   }
 }
 
 function renderCSVData(csvData) {
+
+  console.log(csvData)
   var lines = csvData.split("\n");
   var jsonData = [];
   var columnNames = lines[0].split(",");
@@ -70,12 +73,12 @@ function renderCSVData(csvData) {
     if (isValidRow) {
       jsonData.push(rowData);
     }
+    console.log(jsonData)
   }
 
   currentCSV = jsonData;
   columnNamesArray = columnNames;
   console.log(currentCSV);
-  console.log(columnNamesArray);
 
   for (var column in columnNames) {
     if (column !== "") {

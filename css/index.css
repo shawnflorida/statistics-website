@@ -16,6 +16,12 @@ body {
   margin: 0 10px;
 }
 
+.method-container {
+  margin: 10px 0px 10px 7px;
+  margin-left: 256px;
+  text-align: left;
+}
+
 .button {
   font-family: "Jost", sans-serif;
   display: flex;
@@ -177,18 +183,25 @@ textarea {
 .submit-btn:hover {
   background-color: #2478bc;
 }
-#loginPassword,#loginUsername{
+#loginPassword,
+#loginUsername {
   display: block;
-    width: 300px;
-    height: 40px;
-    padding: 20px;
-    border-radius: 5px;
-    background: #fff;
-    border: none;
-    outline: none;
-    margin: 20px 0 10px 0;
-    color: #383838;
-    font-size: 14px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.01);
-    font-family: "Jost", sans-serif;
+  width: 300px;
+  height: 40px;
+  padding: 20px;
+  border-radius: 5px;
+  background: #fff;
+  border: none;
+  outline: none;
+  margin: 20px 0 10px 0;
+  color: #383838;
+  font-size: 14px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.01);
+  font-family: "Jost", sans-serif;
 }
+
+#navlogin {
+  margin-left: 40px;
+}
+
+

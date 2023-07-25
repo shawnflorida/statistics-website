@@ -7,7 +7,7 @@ function createColumnCheckboxes(columnNames,statisticName,statisticColumnName) {
     var columnName = columnNames[i];
 
     var checkboxContainer = document.createElement("div");
-    checkboxContainer.classList.add("button-container");
+    checkboxContainer.classList.add("method-container");
 
     var label = document.createElement("label");
     label.setAttribute("for", columnName);

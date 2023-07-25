@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/popCSV.css" />
     <link rel="stylesheet" href="css/popManual.css" />
     <link rel="stylesheet" href="css/statistics.css" />
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -27,13 +27,19 @@
       <a href="index.html" class="logo" data-tooltip="The founding logo."></a>
       <ul>
         <li>
-          <a href="index.html" class="nav-item" data-tooltip="Return Home">Home</a>
+          <a href="index.html" class="nav-item" data-tooltip="Return Home"
+            >Home</a
+          >
         </li>
         <li>
-          <a href="about.html" class="nav-item" data-tooltip="About us">About</a>
+          <a href="about.html" class="nav-item" data-tooltip="About us"
+            >About</a
+          >
         </li>
         <li>
-          <a href="contact.html" class="nav-item" data-tooltip="Have us a call">Contact</a>
+          <a href="contact.html" class="nav-item" data-tooltip="Have us a call"
+            >Contact</a
+          >
         </li>
         <li>
           <a
@@ -44,7 +50,10 @@
           >
         </li>
         <li>
-          <a href="prediction.html" class="nav-item" data-tooltip="For all predicting future values."
+          <a
+            href="prediction.html"
+            class="nav-item"
+            data-tooltip="For all predicting future values."
             >Prediction Algorithms</a
           >
         </li>
@@ -58,7 +67,11 @@
           >
         </li>
         <li>
-          <a href="signup.html" class="nav-item" data-tooltip="Sign up here!"
+          <a
+            href="signup.html"
+            class="nav-item"
+            id="navsignup"
+            data-tooltip="Sign up here!"
             >Sign-Up</a
           >
         </li>
@@ -68,11 +81,12 @@
     <div class="quote-container">
       <div id="helloUserDiv">
         <div id="helloUserDiv">
-          Greetings,
-          <h2 id="userNameSpan">Stranger!</h2>
+          <h2 id="userNameSpan">Greetings Stranger!</h2>
         </div>
       </div>
-      <br>
+      <button id="openUserActionsModalBtn">Show User Actions</button>
+
+      <br />
       <p class="quote">
         "Be able to analyze statistics, which can be used to support or undercut
         almost any argument." — Marilyn Vos Savant
@@ -102,6 +116,23 @@
       </section>
     </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <!-- Modal -->
     <div id="manualDataModal" class="modal">
       <div class="modal-content">
@@ -127,7 +158,6 @@
     <!-- Modal -->
     <div id="loginModal" class="modal">
       <div class="modal-content">
-
         <span class="close">&times;</span>
         <h2>Welcome back!</h2>
         <div>

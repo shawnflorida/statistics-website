@@ -9,6 +9,7 @@ nav {
   text-decoration: burlywood;
   margin: 0;
   position: fixed;
+  width: 100%;
   top: 0;
   left: 0;
   right: 0;
@@ -27,11 +28,12 @@ nav:hover {
   background-size: contain;
   margin-right: 20px;
   margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 ul {
   margin: 0;
-  padding: 40;
+  padding: 20;
   display: flex;
   align-items: center;
 }
@@ -65,9 +67,14 @@ ul {
 }
 
 li {
-  margin-left: 35px;
+  margin-left: 50px;
 }
-
+li:nth-child(6) {
+  margin-right: 10px;
+}
+li:nth-child(5) {
+  margin-right: 120px;
+}
 a {
   text-decoration: none;
   color: #fff;
