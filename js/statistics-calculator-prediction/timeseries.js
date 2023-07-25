@@ -1,3 +1,4 @@
+
 function computeTimeSeries(selectedColumns) {
     if (selectedColumns.length !== 2) {
       return "Error: Time Series requires exactly two columns.";
@@ -124,8 +125,8 @@ function predictFutureValues(beta0, beta1, lastDate, numMonths) {
 
   function plotTimeSeriesChart(timestamps, predictedValues) {
     var ctx = document.getElementById("timeSeriesResultChart");
-    ctx.width = 2000;
-    ctx.height = 1000;
+    ctx.width = 500;
+    ctx.height = 450;
     // Check if a chart already exists on the canvas
     var existingChart = Chart.getChart(ctx);
     if (existingChart) {
@@ -173,12 +174,6 @@ function predictFutureValues(beta0, beta1, lastDate, numMonths) {
   }
   
 
-
-
-
-
-
-
 function callTimeSeries() {
   document
     .getElementById("timeSeriesButton")
@@ -213,6 +208,9 @@ function callTimeSeries() {
 
       var resultDiv = document.getElementById("timeSeriesResult");
       resultDiv.innerHTML = timeSeriesResult;
+
+      logUserAction(sampleUserID, currentCSV, "Time Series", selectedColumns, timeSeriesResult);
+
     });
 
   document
@@ -251,3 +249,5 @@ function initializePredictionModal() {
   callKNN();
   callTimeSeries();
 }
+
+

@@ -3,7 +3,7 @@ var currentCSV = [];
 
 var currentChartIndex = 2;
 var columnNamesArray = [];
-
+var csvName;
 document.getElementById("csvButton").addEventListener("click", function (e) {
   e.preventDefault();
   var fileInput = document.createElement("input");

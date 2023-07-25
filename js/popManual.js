@@ -12,6 +12,7 @@ manualDataButton.addEventListener("click", function (e) {
   modal.style.display = "block";
 });
 
+
 closeButton.addEventListener("click", function () {
   modal.style.display = "none";
 });

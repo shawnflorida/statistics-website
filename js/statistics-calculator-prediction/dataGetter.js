@@ -22,6 +22,7 @@ function logUserAction(userId, csvName, actionType, columnsUsed, results) {
     results: results,
   };
 
+
   console.log(userAction)
 
   var userActionsRecord = JSON.parse(

@@ -92,7 +92,7 @@ function regressionChart(
 ) {
   var ctx = document.getElementById("linearRegressionResultChart");
   ctx.width = 500;
-  ctx.height = 500;
+  ctx.height = 450;
   // Check if a chart already exists on the canvas
   var existingChart = Chart.getChart(ctx);
   if (existingChart) {
@@ -189,7 +189,7 @@ function callLinearRegression() {
       resultDiv.innerHTML = linearRegressionResult;
 
 
-      logUserAction(sampleUserID, currentCSV, "Linear Regression", selectedColumns, linearRegressionResult);
+      logUserAction(sampleUserID, csvName, "Linear Regression", selectedColumns, linearRegressionResult);
     });
 
   document

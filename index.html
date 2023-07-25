@@ -8,10 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="css/nav.css" />
     <link rel="stylesheet" href="css/index.css" />
+
     <link rel="stylesheet" href="css/footer.css" />
     <link rel="stylesheet" href="css/popCSV.css" />
     <link rel="stylesheet" href="css/popManual.css" />
     <link rel="stylesheet" href="css/statistics.css" />
+    
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -21,14 +23,62 @@
   </head>
 
   <body>
-    <nav class="navbar"></nav>
+    <nav>
+      <a href="index.html" class="logo" data-tooltip="The founding logo."></a>
+      <ul>
+        <li>
+          <a href="#" class="nav-item" data-tooltip="Return Home">Home</a>
+        </li>
+        <li>
+          <a href="#" class="nav-item" data-tooltip="About us">About</a>
+        </li>
+        <li>
+          <a href="#" class="nav-item" data-tooltip="Phone us">Contact</a>
+        </li>
+        <li>
+          <a
+            href="statistics.html"
+            class="nav-item"
+            data-tooltip="For all of statistical calculations."
+            >Statistical Tools</a
+          >
+        </li>
+        <li>
+          <a href="#" class="nav-item" data-tooltip="For all predicting future values."
+            >Prediction Algorithms</a
+          >
+        </li>
+        <li>
+          <a
+            href="#"
+            id="openLoginModalBtn"
+            class="nav-item"
+            data-tooltip="Have an account?"
+            >Login</a
+          >
+        </li>
+        <li>
+          <a href="signup.html" class="nav-item" data-tooltip="Sign up here!"
+            >Sign-Up</a
+          >
+        </li>
+      </ul>
+    </nav>
 
     <div class="quote-container">
+      <div id="helloUserDiv">
+        <div id="helloUserDiv">
+          Greetings,
+          <h2 id="userNameSpan">Stranger!</h2>
+        </div>
+      </div>
+      <br>
       <p class="quote">
         "Be able to analyze statistics, which can be used to support or undercut
         almost any argument." — Marilyn Vos Savant
       </p>
     </div>
+
     <div class="button-container-1">
       <section class="button-section">
         <div class="button-container">
@@ -65,6 +115,36 @@
         <button id="addDataButton">Add Column Names</button>
         <ul id="dataList"></ul>
         <button id="processDataButton">Continue</button>
+      </div>
+    </div>
+
+    <!-- Alert box and loader -->
+
+    <div class="alert-box">
+      <img src="assets/error.png" class="alert-img" />
+      <p class="alert-msg">Error Message</p>
+    </div>
+    <!-- Modal -->
+    <div id="loginModal" class="modal">
+      <div class="modal-content">
+
+        <span class="close">&times;</span>
+        <h2>Welcome back!</h2>
+        <div>
+          <input
+            type="user"
+            autocomplete="off"
+            id="loginUsername"
+            placeholder="Username"
+          />
+          <input
+            type="password"
+            autocomplete="off"
+            id="loginPassword"
+            placeholder="Password"
+          />
+        </div>
+        <button id="loginBtn">Continue</button>
       </div>
     </div>
 
@@ -318,9 +398,6 @@
       </div>
     </div>
 
-
-
-
     <!-- Modal for Minimum -->
     <div id="minimumModal" class="modal">
       <div class="modal-content">
@@ -359,7 +436,7 @@
         <div id="standardDeviationResult"></div>
       </div>
     </div>
-    
+
     <div id="countOfValuesModal" class="modal">
       <div class="modal-content">
         <span class="close" id="closeCountOfValuesButton">&times;</span>
@@ -371,45 +448,60 @@
         <div id="countOfValuesResult"></div>
       </div>
     </div>
-  
 
     <div id="linearModal" class="modal">
       <div class="modal-content">
         <span class="close" id="closeLinearRegressionButton">&times;</span>
         <h2>Select two Columns for Linear Regression</h2>
-        <form id="linarRegressionForm">
-        </form>
+        <form id="linarRegressionForm"></form>
         <button id="processLinearRegressionButton">Continue</button>
         <div id="linearRegressionResult"></div>
-        <canvas id="linearRegressionResultChart" width="10" height="10"></canvas>
+        <canvas
+          id="linearRegressionResultChart"
+          width="10"
+          height="10"
+        ></canvas>
       </div>
     </div>
-
 
     <div id="randomForestModal" class="modal">
       <div class="modal-content">
         <span class="close" id="closeRandomForestButton">&times;</span>
         <h2>Select two Columns for Random Forest Regression.</h2>
         <label for="treeValue">Enter Tree value:</label>
-          <input type="number" id="treeValueNumber" name="treeValueNumber" min="1" step="1" required>
-        <form id="randomForestForm">
-          
-        </form>
+        <input
+          type="number"
+          id="treeValueNumber"
+          name="treeValueNumber"
+          min="1"
+          step="1"
+          required
+        />
+        <form id="randomForestForm"></form>
         <button id="processRandomForestButton">Continue</button>
         <div id="randomForestResult"></div>
         <canvas id="randomForestResultChart" width="10" height="10"></canvas>
       </div>
     </div>
 
-
     <div id="knnModal" class="modal">
       <div class="modal-content">
         <span class="close" id="closeKNNButton">&times;</span>
-        <h2>Select Columns for KNN. <br> First column is predicted.</h2>
+        <h2>
+          Select Columns for KNN. <br />
+          First column is predicted.
+        </h2>
         <form id="knnForm">
           <!-- Input field for K value -->
           <label for="kValue">Enter K value:</label>
-          <input type="number" id="kValueNumber" name="kValue" min="1" step="1" required>
+          <input
+            type="number"
+            id="kValueNumber"
+            name="kValue"
+            min="1"
+            step="1"
+            required
+          />
         </form>
         <button id="processKNNButton">Continue</button>
         <div id="knnResult"></div>
@@ -417,11 +509,13 @@
       </div>
     </div>
 
-
     <div id="timeSeriesModal" class="modal">
       <div class="modal-content">
         <span class="close" id="closeTimeSeriesButton">&times;</span>
-        <h2>Select two Columns for Time Series. <br> First column clicked should be  Date.</h2>
+        <h2>
+          Select two Columns for Time Series. <br />
+          First column clicked should be Date.
+        </h2>
         <form id="timeSeriesForm">
           <!-- Input field for K value -->
         </form>
@@ -430,16 +524,6 @@
         <canvas id="timeSeriesResultChart" width="10" height="10"></canvas>
       </div>
     </div>
-
-
-
-
-
-
-
-
-
-
 
     <footer class="footer-container"></footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
@@ -454,11 +538,10 @@
 
     <!-- import all data first, then graph. JS is sequential -->
     <script src="js/statistics-calculator-prediction/dataGetter.js"></script>
+    <script src="js/index.js" async defer></script>
 
-    <script src="js/nav.js" async defer></script>
     <script src="js/footer.js" async defer></script>
 
-    <script src="js/index.js" async defer></script>
     <!-- show the charts first -->
     <script src="js/3buttons.js" async defer></script>
     <script src="js/statistics-calculator-prediction/statistics.js"></script>
@@ -468,8 +551,6 @@
     <script src="js/statistics-calculator-prediction/knn.js"></script>
     <script src="js/statistics-calculator-prediction/timeseries.js"></script>
 
-
-
     <!-- need to identify the functions first before data -->
     <script src="js/popCSV.js" async defer></script>
     <script src="js/popManual.js" async defer></script>
@@ -477,6 +558,6 @@
 
     <script src="js/chartslideshow.js"></script>
     <script src="js/columnChecker.js"></script>
-
+    <script src="js/loginForm.js" async defer></script>
   </body>
 </html>

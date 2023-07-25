@@ -277,7 +277,7 @@ function callANOVA() {
 
       var resultDiv = document.getElementById("anovaResult");
       resultDiv.innerHTML = anovaResult;
-      logUserAction(sampleUserID, currentCSV, "ANOVA", selectedColumns, anovaResult);
+      logUserAction(sampleUserID, csvName, "ANOVA", selectedColumns, anovaResult);
 
     });
 
@@ -325,7 +325,7 @@ function callTtest() {
 
       var resultDiv = document.getElementById("tTestResult");
       resultDiv.innerHTML = tTestResult;
-      logUserAction(sampleUserID, currentCSV, "T-Test", selectedColumns, tTestResult);
+      logUserAction(sampleUserID, csvName, "T-Test", selectedColumns, tTestResult);
 
     });
 
@@ -378,7 +378,7 @@ function callPearson() {
       var resultDiv = document.getElementById("pearsonResult");
       resultDiv.innerHTML = pearsonResult;
 
-      logUserAction(sampleUserID, currentCSV, "Pearson Correlation", selectedColumns, pearsonResult);
+      logUserAction(sampleUserID, csvName, "Pearson Correlation", selectedColumns, pearsonResult);
 
     });
 
@@ -431,7 +431,7 @@ function callSpearman() {
       resultDiv.innerHTML = spearmanResult;
 
 
-      logUserAction(sampleUserID, currentCSV, "Spearman Rho", selectedColumns, spearmanResult);
+      logUserAction(sampleUserID, csvName, "Spearman Rho", selectedColumns, spearmanResult);
 
     });
 
@@ -468,7 +468,7 @@ function callChi() {
 
       var resultDiv = document.getElementById("chiResult");
       resultDiv.innerHTML = chiResult;
-      logUserAction(sampleUserID, currentCSV, "Chi Square", selectedColumns, chiResult);
+      logUserAction(sampleUserID, csvName, "Chi Square", selectedColumns, chiResult);
 
     });
 

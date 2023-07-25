@@ -6,6 +6,7 @@ function createChart(jsonData, column) {
   // Check if the data is of date type
   if (chartData.some((data) => data instanceof Date)) {
     console.log("Skipping date column:", column);
+    return;
   }
 
   // Check if the data contains any invalid or NaN values
