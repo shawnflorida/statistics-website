@@ -130,7 +130,7 @@ processDataButton.addEventListener("click", function () {
     }
 
     // Convert the columnValues object to CSV format with column names included
-    var csvData = "Column," + Object.keys(columnValues).join(",") + "\n";
+    var csvData = Object.keys(columnValues).join(",") + "\n";
     for (var row = 0; row < numRows; row++) {
       csvData += row + 1 + ","; // Include the row number
       csvData +=
