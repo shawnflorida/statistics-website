@@ -17,7 +17,7 @@ body {
 }
 
 .method-container {
-  margin: 10px 0px 10px 7px;
+  margin: 2px 0px 2px 7px;
   margin-left: 256px;
   text-align: left;
 }
@@ -200,7 +200,7 @@ textarea {
   font-family: "Jost", sans-serif;
 }
 
-#navlogin {
+#navlogin,#loginText {
   margin-left: 40px;
 }
 

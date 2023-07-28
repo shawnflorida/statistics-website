@@ -61,7 +61,7 @@
           <a
             href="#"
             id="openLoginModalBtn"
-            class="nav-item"
+            class="loginText"
             data-tooltip="Have an account?"
             >Login</a
           >
@@ -81,10 +81,11 @@
     <div class="quote-container">
       <div id="helloUserDiv">
         <div id="helloUserDiv">
-          <h2 id="userNameSpan">Greetings Stranger!</h2>
+          <h2>Greetings <strong id="userNameSpan">Stranger!</strong></h2>
         </div>
       </div>
-      <button id="openUserActionsModalBtn">Show User Actions</button>
+      <button id="openUserActionsModalBtn">Show Recent Actions</button>
+      <button id="openUserAccountsModalBtn">Show Admin Panel</button>
 
       <br />
       <p class="quote">
@@ -115,8 +116,6 @@
         </div>
       </section>
     </div>
-
-
 
     <!-- Modal -->
     <div id="manualDataModal" class="modal">
@@ -162,6 +161,8 @@
         <button id="loginBtn">Continue</button>
       </div>
     </div>
+
+    <!-- Column Graphs -->
 
     <h2 class="slideshow-header">Column Graphs</h2>
     <div id="slideshow" class="slideshow"></div>

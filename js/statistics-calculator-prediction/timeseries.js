@@ -126,7 +126,7 @@ function predictFutureValues(beta0, beta1, lastDate, numMonths) {
   function plotTimeSeriesChart(timestamps, predictedValues) {
     var ctx = document.getElementById("timeSeriesResultChart");
     ctx.width = 500;
-    ctx.height = 450;
+    ctx.height = 350;
     // Check if a chart already exists on the canvas
     var existingChart = Chart.getChart(ctx);
     if (existingChart) {

@@ -92,7 +92,7 @@ function regressionChart(
 ) {
   var ctx = document.getElementById("linearRegressionResultChart");
   ctx.width = 500;
-  ctx.height = 450;
+  ctx.height = 350;
   // Check if a chart already exists on the canvas
   var existingChart = Chart.getChart(ctx);
   if (existingChart) {

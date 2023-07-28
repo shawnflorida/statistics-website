@@ -59,7 +59,7 @@ function euclideanDistance(point1, point2) {
 function knnChart(xValues, predictedValues, regressionEquation) {
   var ctx = document.getElementById("knnResultChart");
   ctx.width = 500;
-  ctx.height = 450;
+  ctx.height = 250;
   // Check if a chart already exists on the canvas
   var existingChart = Chart.getChart(ctx);
   if (existingChart) {
